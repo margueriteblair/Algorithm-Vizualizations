@@ -1,11 +1,16 @@
 document.getElementById("welcome").innerText = "Welcome to Margie's Viz of the Sieve of Eratosthenes";
 document.getElementById("instructions").innerText = "Input the number you want to see go through the sieve:";
 
-num = (document.getElementById("sieve_num").value);
+let num = 0;
 
 let sieve = {
+
+
     getNum: function() {
+        num = parseInt(document.getElementById("sieve_num").value);
         console.log(num);
+        document.getElementById("sieve_num").value = "";
+        this.createGrid(num);
     }, 
 
     createGrid: function(num) {
