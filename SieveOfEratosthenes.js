@@ -4,16 +4,12 @@ document.getElementById("instructions").innerText = "Input the number you want t
 let num = 0;
 
 let sieve = {
-
-
     getNum: function() {
         num = parseInt(document.getElementById("sieve_num").value);
-        console.log(num);
         document.getElementById("sieve_num").value = "";
         document.getElementById("grid").innerHTML = '';
         this.createGrid(num);
     }, 
-
     createGrid: function(num) {
         let container = document.createElement('div');
         container.id = "main";
@@ -26,11 +22,27 @@ let sieve = {
             container.appendChild(row);
         }
         document.getElementById("grid").appendChild(container);
+        this.findPrimes();
     },
 
     findPrimes: function() {
+        let array = [], upperLimit = Math.sqrt(num), output = [];
+        for (let i = 0; i <=num; i++) {
+            array.push(true);
+        }
 
+        for (let i = 2; i <= upperLimit; i++) {
+            if (array[i]) {
+                for (let j = i*i; j <=num; j+=i) {
+                    array[j] = false;
+                }
+            }
+        }
+        for (let i = 2; i <= num; i++) {
+            if (array[i]) output.push(i);
+        }
+        console.log("output: " + output);
+        console.log("the number of primes is: " + output.length);
     }
 }
 
-// console.log(createGrid(5));
