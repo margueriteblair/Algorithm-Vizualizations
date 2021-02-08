@@ -1,9 +1,13 @@
 document.getElementById("welcome").innerText = "Welcome to Margie's Viz of the Sieve of Eratosthenes";
 document.getElementById("instructions").innerText = "Input the number you want to see go through the sieve:";
 
-num = document.getElementById("sieve_num");
+num = (document.getElementById("sieve_num").value);
 
 let sieve = {
+    getNum: function() {
+        console.log(num);
+    }, 
+
     createGrid: function(num) {
         let container = document.createElement('div');
         container.id = "main";
