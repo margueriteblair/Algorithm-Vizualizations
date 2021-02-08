@@ -21,15 +21,13 @@ let sieve = {
             let row = document.createElement('div');
             row.className = "row"
             row.id = "row" + i;
-            for (let j = 1; j <= num; j++) {
-                let box = document.createElement('div');
-                box.className='box';
-                box.innerText = (i*j).toString();
-                row.appendChild(box);
-            }
             container.appendChild(row);
         }
-        return container;
+        document.getElementById("grid").appendChild(container);
+    },
+
+    findPrimes: function() {
+        
     }
 }
 
