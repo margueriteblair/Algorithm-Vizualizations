@@ -15,7 +15,7 @@ let sieve = {
         container.id = "main";
         container.className = "container";
         for (let i = 1; i <= num; i++) {
-            let row = document.createElement('div');
+            let row = document.createElement('h4');
             row.className = "row"
             row.id = "row" + i;
             row.innerText = i.toString();
@@ -26,6 +26,7 @@ let sieve = {
     },
 
     findPrimes: function() {
+        //this just prints them out, but we want interactive squares
         let array = [], upperLimit = Math.sqrt(num), output = [];
         for (let i = 0; i <=num; i++) {
             array.push(true);
@@ -41,6 +42,11 @@ let sieve = {
         for (let i = 2; i <= num; i++) {
             if (array[i]) output.push(i);
         }
+        let result = document.createElement('h3')
+        result.id = "result"
+        result.innerHTML = "output: " + output + "<br>";
+        result.innerText += "the number of primes is: " + output.length;
+        document.body.appendChild(result);
         console.log("output: " + output);
         console.log("the number of primes is: " + output.length);
     }
