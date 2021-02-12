@@ -20,17 +20,20 @@ let sieve = {
         });
     }, 
     createGrid: function(rows, cols, callback) {
-        let container = document.createElement('div');
-        container.id = "main";
-        container.className = "container";
-        for (let i = 1; i <= num; i++) {
-            let row = document.createElement('h4');
-            row.className = "row"
-            row.id = "row" + i;
-            row.innerText = i.toString();
-            container.appendChild(row);
+        var i = 0; 
+        let grid = document.createElement('table');
+        grid.className = 'grid'
+        for (let r = 0; r < rows; ++r) {
+            var tr = grid.appendChild(document.createElement('tr'));
+            for (let c=0; c < cols; ++c) {
+                let cell = tr.appendChild(document.createElement('td'));
+                cell.innerHTML = ++i;
+                cell.addEventListener('click', (function(el, r, c, i) {
+                    return function() {callback(el,r,c,i);}
+                }) (cell, r, c, i), false);
+            }
         }
-        document.getElementById("grid").appendChild(container);
+        document.body.appendChild(grid);
         this.findPrimes();
     },
 
