@@ -10,3 +10,14 @@
     background-color:yellow;
     font-weight:bold; color:red;
 }
+
+#sieve_num, #submit {
+    width: 100px;
+    height: 30px;
+    border-radius: 4;
+    
+}
+
+#holder {
+    text-align: center;
+}

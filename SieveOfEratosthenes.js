@@ -20,7 +20,7 @@ let sieve = {
         });
     }, 
     createGrid: function(rows, cols, callback) {
-        var i = 0; 
+        var i = 0;
         let grid = document.createElement('table');
         grid.className = 'grid'
         for (let r = 0; r < rows; ++r) {
