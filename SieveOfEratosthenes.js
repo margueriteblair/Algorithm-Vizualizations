@@ -8,7 +8,7 @@ let sieve = {
         num = parseInt(document.getElementById("sieve_num").value);
         document.getElementById("sieve_num").value = "";
         document.getElementById("grid").innerHTML = '';
-        this.createGrid(num/6, 6, function(el,row,col,i){
+        this.createGrid(num/10, 10, function(el,row,col,i){
             console.log("You clicked on element:",el);
             console.log("You clicked on row:",row);
             console.log("You clicked on col:",col);
