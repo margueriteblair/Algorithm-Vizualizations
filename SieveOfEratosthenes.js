@@ -56,16 +56,21 @@ let sieve = {
                 }
             }
         }
-        for (let i = 2; i <= num; i++) {
-            if (array[i]) output.push(i);
-        }
         let result = document.createElement('h3')
-        result.id = "result"
-        result.innerHTML = "output: " + output + "<br>";
-        result.innerText += "the number of primes is: " + output.length;
+        result.id = "result1"
+        result.innerText = "The primes within this threshold are: "
+        for (let i = 2; i <= num; i++) {
+            if (array[i]) {
+                output.push(i);
+                result.innerText += " " + i.toString() + ",";
+            }
+        }
+        let result2 = document.createElement('h3');
+        result2.id = 'result2';
+        result2.innerText = "The number of primes is: " + output.length;
         document.body.appendChild(result);
-        console.log("output: " + output);
-        console.log("the number of primes is: " + output.length);
+        document.body.appendChild(result2);
+
     }
 }
 
