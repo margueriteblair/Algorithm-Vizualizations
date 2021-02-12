@@ -14,9 +14,9 @@ let sieve = {
             console.log("You clicked on col:",col);
             console.log("You clicked on item #:",i);
         
-            el.className='clicked';
-            if (lastClicked) lastClicked.className='';
-            lastClicked = el;
+            // el.className='clicked';
+            // if (lastClicked) lastClicked.className='';
+            // lastClicked = el;
         });
     }, 
     createGrid: function(rows, cols, callback) {
@@ -28,6 +28,7 @@ let sieve = {
             for (let c=0; c < cols; ++c) {
                 let cell = tr.appendChild(document.createElement('td'));
                 cell.innerHTML = ++i;
+                if (i >= num) break;
                 cell.addEventListener('click', (function(el, r, c, i) {
                     return function() {callback(el,r,c,i);}
                 }) (cell, r, c, i), false);
