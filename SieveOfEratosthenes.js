@@ -8,9 +8,18 @@ let sieve = {
         num = parseInt(document.getElementById("sieve_num").value);
         document.getElementById("sieve_num").value = "";
         document.getElementById("grid").innerHTML = '';
-        this.createGrid(num);
+        this.createGrid(num/6, 6, function(el,row,col,i){
+            console.log("You clicked on element:",el);
+            console.log("You clicked on row:",row);
+            console.log("You clicked on col:",col);
+            console.log("You clicked on item #:",i);
+        
+            el.className='clicked';
+            if (lastClicked) lastClicked.className='';
+            lastClicked = el;
+        });
     }, 
-    createGrid: function(num) {
+    createGrid: function(rows, cols, callback) {
         let container = document.createElement('div');
         container.id = "main";
         container.className = "container";
