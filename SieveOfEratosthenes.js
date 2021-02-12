@@ -28,6 +28,7 @@ let sieve = {
             for (let c=0; c < cols; ++c) {
                 let cell = tr.appendChild(document.createElement('td'));
                 cell.innerHTML = ++i;
+                cell.id = cell.innerHTML;
                 if (i >= num) break;
                 cell.addEventListener('click', (function(el, r, c, i) {
                     return function() {callback(el,r,c,i);}
