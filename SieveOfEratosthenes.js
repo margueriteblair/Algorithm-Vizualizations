@@ -50,6 +50,9 @@ let sieve = {
             if (array[i]) {
                 for (let j = i*i; j <=num; j+=i) {
                     array[j] = false;
+                    let toChange = document.getElementById(j.toString());
+                    toChange.style["background-color"] = "gray";
+
                 }
             }
         }
