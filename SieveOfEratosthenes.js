@@ -60,6 +60,7 @@ let sieve = {
         }
         let result2 = document.createElement('h3');
         result2.id = 'result2';
+        result.innerText = result.innerText.substring(0, result.innerText.length-1);
         result2.innerText = "The number of primes is: " + output.length;
         document.body.appendChild(result);
         document.body.appendChild(result2);
