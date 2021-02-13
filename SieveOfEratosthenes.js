@@ -49,6 +49,7 @@ let sieve = {
                 }
             }
         }
+        document.getElementById("1").style["background-color"] = "gray";
         let result = document.createElement('h3')
         result.id = "result1"
         result.innerText = "The primes within this threshold are: "
