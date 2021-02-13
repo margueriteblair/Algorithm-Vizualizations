@@ -7,22 +7,17 @@ let sieve = {
     getNum: function() {
         num = parseInt(document.getElementById("sieve_num").value);
         document.getElementById("sieve_num").value = "";
-        document.getElementById("grid").innerHTML = '';
         this.createGrid(num/10, 10, function(el,row,col,i){
             console.log("You clicked on element:",el);
             console.log("You clicked on row:",row);
             console.log("You clicked on col:",col);
             console.log("You clicked on item #:",i);
-        
-            // el.className='clicked';
-            // if (lastClicked) lastClicked.className='';
-            // lastClicked = el;
         });
     }, 
     createGrid: function(rows, cols, callback) {
         var i = 0;
         let grid = document.createElement('table');
-        grid.className = 'grid'
+        grid.id = 'grid'
         for (let r = 0; r < rows; ++r) {
             var tr = grid.appendChild(document.createElement('tr'));
             for (let c=0; c < cols; ++c) {
@@ -40,7 +35,6 @@ let sieve = {
     },
 
     findPrimes: function() {
-        //this just prints them out, but we want interactive squares
         let array = [], upperLimit = Math.sqrt(num), output = [];
         for (let i = 0; i <=num; i++) {
             array.push(true);
