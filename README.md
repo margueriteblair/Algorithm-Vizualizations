@@ -1,3 +1,5 @@
+# Algorithm Vizzes
+
 Repository that will be Javascript based visualizations of some of my favorite algorithms!
 
 Vanilla Javascript will be used to vizualize the following:
