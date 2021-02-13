@@ -46,7 +46,6 @@ let sieve = {
                     array[j] = false;
                     let toChange = document.getElementById(j.toString());
                     toChange.style["background-color"] = "gray";
-
                 }
             }
         }
@@ -64,7 +63,11 @@ let sieve = {
         result2.innerText = "The number of primes is: " + output.length;
         document.body.appendChild(result);
         document.body.appendChild(result2);
+        document.querySelector('button').disabled = true;
+    },
 
+    reset: function() {
+        window.location.reload();
     }
 }
 

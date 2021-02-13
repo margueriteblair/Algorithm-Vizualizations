@@ -11,7 +11,7 @@
     font-weight:bold; color:red;
 }
 
-#sieve_num, #submit {
+#sieve_num, #submit, #reset {
     width: 100px;
     height: 30px;
     border-radius: 4;
